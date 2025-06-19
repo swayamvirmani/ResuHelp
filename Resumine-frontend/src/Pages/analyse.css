@@ -1,18 +1,52 @@
-.analyse-container {
+.analyse-bg {
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #2E7D32, #388E3C);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
-    max-width: 1200px;
+}
+
+.analyse-container {
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px);
+    border-radius: 32px;
+    box-shadow: 0 12px 40px rgba(44, 62, 80, 0.18);
+    padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
-    background: #f5f5f5;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid rgba(44, 62, 80, 0.10);
+    transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+}
+
+.analyse-container:hover {
+    box-shadow: 0 20px 60px rgba(44, 62, 80, 0.22);
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.analyse-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2E7D32;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
 }
 
 .upload-section {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1.5rem;
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .upload-label {
@@ -26,29 +60,34 @@
     display: none;
 }
 
+.file-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
 .file-input-label {
     display: inline-flex;
     align-items: center;
-    padding: 0.75rem 1.5rem;
-    background: #007bff;
-    color: white;
-    border-radius: 6px;
+    justify-content: center;
+    padding: 1.1rem 2.2rem;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: #1b3a2f;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background 0.2s;
-    font-size: 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+    border: none;
+    margin: 0 auto;
+    transition: background 0.2s, color 0.2s;
 }
 
 .file-input-label:hover {
-    background: #0056b3;
-}
-
-#file-input {
-    display: none;
-}
-
-.file-input-container {
-    position: relative;
-    display: inline-block;
+    background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+    color: #06507e;
 }
 
 .file-input-label::after {
@@ -70,13 +109,27 @@
 }
 
 #displayer {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    overflow-y: auto;
-    max-height: 400px;
+    margin-top: 2rem;
+    padding: 1.3rem 1.5rem;
+    background: linear-gradient(135deg, #f9fafb 60%, #e0f7fa 100%);
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-radius: 22px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.13);
+    border: 1.5px solid rgba(44, 62, 80, 0.10);
+    max-width: 900px;
+    width: 100%;
+    min-height: 120px;
+    word-break: break-word;
+    white-space: pre-line;
+    transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+}
+
+#displayer:hover {
+    background: linear-gradient(135deg, #f9fafb 60%, #e0f7fa 100%);
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.13);
+    border: 1.5px solid rgba(44, 62, 80, 0.10);
 }
 
 #displayer pre {
@@ -92,32 +145,15 @@
     border-radius: 4px;
 }
 
-#displayer h1 {
-    color: #007bff;
+#displayer h1, #displayer h2, #displayer h3 {
+    color: #2E7D32;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-}
-
-#displayer h2 {
-    color: #0056b3;
-    margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
-}
-
-#displayer h3 {
-    color: #004099;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-#displayer ul,
-#displayer ol {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    font-weight: 700;
 }
 
 #displayer p {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.1rem;
 }
 
 #displayer a {
@@ -291,3 +327,14 @@
     /* display: none; */
 
   }
+
+@media (max-width: 1200px) {
+    .analyse-container {
+        max-width: 98vw;
+        padding: 1.2rem;
+    }
+    #displayer {
+        max-width: 98vw;
+        padding: 1rem 0.5rem;
+    }
+}

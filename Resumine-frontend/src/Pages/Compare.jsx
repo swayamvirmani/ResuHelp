@@ -95,26 +95,45 @@ const Compare = () => {
   };
 
   return (
-    <div className="flex bg-gradient-to-bl from-[#7acef7] to-[#06507e] flex-col lg:flex-row">
-      <div className="lg:w-[40%] h-screen ml-10">
-        <div className="mt-36 lg:ml-20">
-          <h1 className="text-[40px] font-bold text-white">Compare 2 Resumes</h1>
-          <p className="text-white">(Upload only PDF files)</p>
-        </div>
-        <div className="mt-6 lg:ml-20 flex flex-col gap-4 w-[70%]">
-          <input type="file" accept="application/pdf" onChange={handleFileChange1} />
-          <input type="file" accept="application/pdf" onChange={handleFileChange2} />
-
-          <div className="flex gap-4">
-            <Button colorScheme="green" onClick={handleCompare}>Analyse</Button>
-            <Button colorScheme="red" onClick={clearAll}>Clear</Button>
+    <div className="analyse-bg">
+      <div className="analyse-container">
+        <h1 className="text-3xl font-bold mb-8">Compare 2 Resumes</h1>
+        <div className="upload-section">
+          <div className="file-input-container" style={{ width: '100%' }}>
+            <input
+              type="file"
+              id="file-input-1"
+              style={{ display: 'none' }}
+              onChange={handleFileChange1}
+              accept="application/pdf"
+            />
+            <label htmlFor="file-input-1" className="file-input-label" style={{ width: '100%', justifyContent: 'center', marginBottom: '1rem' }}>
+              {file1 ? file1.name : 'Choose First PDF File'}
+            </label>
+            <input
+              type="file"
+              id="file-input-2"
+              style={{ display: 'none' }}
+              onChange={handleFileChange2}
+              accept="application/pdf"
+            />
+            <label htmlFor="file-input-2" className="file-input-label" style={{ width: '100%', justifyContent: 'center' }}>
+              {file2 ? file2.name : 'Choose Second PDF File'}
+            </label>
           </div>
-          {loading && <Spinner size="xl" color="blue.400" />}
+          <div className="mt-4 flex gap-4" style={{ justifyContent: 'center', width: '100%' }}>
+            <Button colorScheme="green" onClick={handleCompare} isDisabled={!file1 || !file2} isLoading={loading}>
+              Analyse
+            </Button>
+            <Button colorScheme="red" onClick={clearAll} isDisabled={!file1 && !file2}>
+              Clear
+            </Button>
+          </div>
         </div>
-      </div>
-
-      <div className="lg:w-1/2 h-screen w-[90%] overflow-auto mt-24 bg-white p-5 rounded-lg" style={{ display: analysis ? 'block' : 'none' }}>
-        <div id="displayer" dangerouslySetInnerHTML={{ __html: analysis }}></div>
+        {/* Display analysis result safely */}
+        {analysis && (
+          <div id="displayer" className="mt-6" dangerouslySetInnerHTML={{ __html: analysis }} />
+        )}
       </div>
     </div>
   );

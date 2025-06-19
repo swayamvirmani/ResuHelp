@@ -4,15 +4,195 @@
     
 }
 
-.maincontt{
-    height: 80vh;
-    width: 100vw;
-    /* background: linear-gradient(to bottom left, #7acef7, #06507e); */
-}
-.gridd{
-    justify-content: center;
+.maincontt {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #2E7D32, #388E3C);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3.5rem 2rem 2rem 2rem;
+  overflow-y: auto;
 }
 
-.boxy{
-    margin: auto;
+.homecont {
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-section {
+  margin: 2rem 0;
+}
+
+.main-heading {
+  font-size: 4.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+.sub-heading {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+/* First card: Analyse your resume */
+.service-card.analyse {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #1b3a2f;
+}
+
+/* Second card: Compare Two resumes */
+.service-card.compare {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: #3a1b1b;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(44, 62, 80, 0.18);
+  border: 1.5px solid rgba(255,255,255,0.35);
+}
+
+.service-card h2, .service-card h3, .service-card h4 {
+  color: inherit;
+}
+
+.service-card p {
+  color: rgba(30, 30, 30, 0.85);
+}
+
+/* Key Features Section */
+.key-features-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.features-heading {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h2 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.feature-card .chakra-text {
+  color: white;
+}
+
+/* FAQ Section */
+.faq-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 2rem auto;
+}
+
+.faq-heading {
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Chakra UI Accordion Styles */
+.chakra-accordion {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.chakra-accordion__button {
+  color: white;
+  font-size: 1.35rem;
+  padding: 1.25rem 1rem;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.chakra-accordion__button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.chakra-accordion__button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.chakra-accordion__icon {
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.chakra-accordion__icon--expanded {
+  transform: rotate(90deg);
+}
+
+.chakra-accordion__panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 15px 15px;
+  padding: 2rem 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.chakra-accordion__panel p {
+  margin: 0;
 }

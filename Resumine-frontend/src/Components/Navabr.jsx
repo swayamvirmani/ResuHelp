@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Text } from '@chakra-ui/react'
+import { Text, IconButton } from '@chakra-ui/react'
 import "./Navbar.css"
+import { FaGithub } from 'react-icons/fa'
 
 const Navbar = () => {
   return (
@@ -10,7 +11,9 @@ const Navbar = () => {
             <nav className='Navbar'>
               <div id="logoh">
                 {/* <img src={logo} alt="" id="logohh"/> */}
-                <Text fontSize={"2xl" } as="b">ResuMine</Text>
+                <NavLink to="/" className="logo-link">
+                  <Text fontSize={"2xl" } as="b">ResuHelp</Text>
+                </NavLink>
                 </div>
               
                 <ul id='hca'>
@@ -46,6 +49,19 @@ const Navbar = () => {
                     <div className="profile">
                         <Profile2button/>
                     </div> */}
+                    
+                    <IconButton
+                      as="a"
+                      href="https://github.com/swayamvirmani/ResuMind"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      icon={<FaGithub style={{ fontSize: '2.2rem' }} />}
+                      aria-label="GitHub"
+                      size="lg"
+                      variant="ghost"
+                      color="#222"
+                      _hover={{ bg: 'transparent', color: '#2E7D32' }}
+                    />
                     
                     </div>
                 
