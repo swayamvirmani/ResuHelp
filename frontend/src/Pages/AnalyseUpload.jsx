@@ -11,6 +11,8 @@ const AnalyseUpload = () => {
   const [analysisResponse, setAnalysisResponse] = useState(null);
   const toast = useToast();
 
+  const BACKEND_URL = "https://resumind-backend.onrender.com";
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -37,7 +39,7 @@ const AnalyseUpload = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post('http://localhost:5000/analyse', formData, {
+      const res = await axios.post(`${BACKEND_URL}/analyse`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -112,7 +114,6 @@ const AnalyseUpload = () => {
             </Button>
           </div>
         </div>
-        {/* Display analysis result safely */}
         {analysisResponse?.analysis && (
           <div
             id="displayer"
