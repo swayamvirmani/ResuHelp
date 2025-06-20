@@ -38,18 +38,19 @@ ResuHelp/
 
 ## ⚙️ Setup Instructions
 
-### 🔙 Backend Setup
+🔙 Setup
 
 1. Navigate to the backend folder:
 
 ```bash
+BACKEND
 cd backend
 npm install
 COHERE_API_KEY=your_cohere_api_key_here
 node server.js
 
 
-🖥️ Frontend Setup
+FRONTEND
 Navigate to the frontend folder:
 
 bash
