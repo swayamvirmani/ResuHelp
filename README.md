@@ -1,72 +1,104 @@
-# Resumine - Resume Analysis and Creation Tool
+# ResuHelp – AI-Powered Resume Helper ✨
 
-A web application for analyzing and creating professional resumes.
+ResuHelp is a full-stack web application that helps users **analyze** and **compare** resumes using AI, making it easier to improve and screen resumes effectively.
 
-## Features
+Built with **React**, **Node.js**, **Express**, and powered by **Cohere's LLM**, it offers instant, markdown-formatted feedback on resumes and highlights key differences between them.
 
-- Resume analysis using AI
-- Resume creation assistance
-- Compare multiple resumes
-- Modern and user-friendly interface
+---
 
-## Setup Instructions
+## 🚀 Features
 
-### Backend Setup
+- 📄 **Resume Analysis**: Upload a resume and receive AI-generated feedback including skills, strengths, weaknesses, and improvement tips.
+- 🆚 **Resume Comparison**: Upload two resumes to compare them side-by-side and get a detailed analysis.
+- ⚡ Instant markdown output with clean formatting
+- 🌐 Deployed and accessible online (Vercel + Render)
 
-1. Navigate to the backend directory:
+---
+
+## 📁 Project Structure
+
+ResuHelp/
+├── backend/ # Node.js + Express backend with Cohere API
+├── frontend/ # React + Chakra UI frontend
+├── README.md
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer     | Technologies                          |
+|-----------|---------------------------------------|
+| Frontend  | React, Chakra UI, Axios               |
+| Backend   | Node.js, Express, Multer, pdf-parse   |
+| AI API    | Cohere (Command-R model)              |
+| Deployment| Vercel (Frontend), Render (Backend)   |
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🔙 Backend Setup
+
+1. Navigate to the backend folder:
+
 ```bash
-    cd Resumine-backend
-```
+cd backend
+npm install
+COHERE_API_KEY=your_cohere_api_key_here
+node server.js
 
-2. Install dependencies:
-```bash
-    npm install
-```
 
-3. Set up environment variables:
-Create a `.env` file in the backend directory with your Google Gemini API key:
-```
-GOOGLE_API_KEY=your_gemini_api_key_here
-```
+🖥️ Frontend Setup
+Navigate to the frontend folder:
 
-To get your Gemini API key:
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable the Generative AI API
-3. Create a new API key from the Credentials section
-4. Copy the API key and paste it in the .env file
+bash
+Copy
+Edit
+cd frontend
+Install dependencies:
 
-Note: Make sure you have billing enabled on your Google Cloud account to use Gemini API.
-4. Start the backend server:
-```bash
-    npm start
-```
+bash
+Copy
+Edit
+npm install
+Update the backend URL in your code (AnalyseUpload.js, Compare.js):
 
-### Frontend Setup
+js
+Copy
+Edit
+const BACKEND_URL = "https://your-backend-url.onrender.com";
+Start the development server:
 
-1. Navigate to the frontend directory:
-```bash
-    cd Resumine-frontend
-```
+bash
+Copy
+Edit
+npm start
 
-2. Install dependencies:
-```bash
-    npm install
-```
+🌐 Live Demo
+Frontend (Vercel): https://resuhelp.vercel.app
 
-3. Start the frontend development server:
-```bash
-    npm start
-```
+Backend (Render): https://resuhelp-backend.onrender.com
 
-## Usage
+📌 Usage
+Visit the app
 
-1. Upload your resume file (PDF, DOC, DOCX supported)
-2. Click "Upload" to process the file
-3. Click "Analyse Resume" to get AI-powered analysis
-4. View the analysis results in markdown format
+Upload one or two PDF resumes
 
-## Technologies Used
+Click Analyse or Compare
 
-- Frontend: React, Chakra UI, Axios
-- Backend: Node.js, Express, Tesseract.js, Google AI
-- File Processing: Multer
+View AI-generated feedback in beautifully formatted markdown
+
+📚 Example Output
+markdown
+Copy
+Edit
+### Resume Strengths:
+- Strong experience in backend development
+- Demonstrated leadership through open-source contributions
+
+### Suggested Improvements:
+- Add quantified achievements
+- Highlight recent certifications
+
+### Overall Score: 8.5/10
